@@ -1,11 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" type="text/css" href="css/styles.css"> <!-- Vincula o arquivo CSS externo -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando Dois Componentes em Canvas</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body onload="startGame()"> <!-- Quando a página carregar, iniciará o jogo -->
-    <script src="js/script.js"></script> <!-- Vincula o arquivo JS externo -->
-    <p>Adicionamos dois componentes ao jogo um vermelho e um azul</p>
+<body>
+    <div class="container">
+        <h1>🎮 Meu Primeiro Jogo em Canvas</h1>
+        
+        <div class="info">
+            <strong>O que você verá:</strong><br>
+            • Um quadrado vermelho (jogador)<br>
+            • Um quadrado azul (obstáculo)<br>
+            • Ambos desenhados em um canvas HTML5
+        </div>
+        
+        <div class="controls">
+            <button onclick="iniciarJogo()">🚀 Iniciar Jogo</button>
+            <button onclick="pararJogo()">⏹️ Parar Jogo</button>
+        </div>
+        
+        <!-- O canvas será criado aqui pelo JavaScript -->
+    </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
