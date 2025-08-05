@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplos Componentes - Jogo Canvas</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Jogo Canvas - Exemplo Didático</h1>
+        
+        <div class="descricao">
+            <strong>O que este código faz:</strong><br>
+            Este é um exemplo básico de como criar objetos coloridos em um canvas HTML5. 
+            O jogo cria 4 retângulos coloridos que são desenhados continuamente na tela.
+        </div>
+        
+        <!-- O canvas será inserido aqui pelo JavaScript -->
+        
+        <div class="info">
+            <strong>📊 Informações técnicas:</strong>
+            <div class="pecas-info">
+                <div class="peca-card">
+                    <span class="cor-exemplo" style="background-color: red;"></span>
+                    <strong>Peça Vermelha:</strong> 30x30px na posição (10, 120)
+                </div>
+                <div class="peca-card">
+                    <span class="cor-exemplo" style="background-color: blue;"></span>
+                    <strong>Peça Azul:</strong> 50x50px na posição (300, 150)
+                </div>
+                <div class="peca-card">
+                    <span class="cor-exemplo" style="background-color: green;"></span>
+                    <strong>Peça Verde:</strong> 20x20px na posição (50, 50)
+                </div>
+                <div class="peca-card">
+                    <span class="cor-exemplo" style="background-color: yellow;"></span>
+                    <strong>Peça Amarela:</strong> 40x40px na posição (200, 100)
+                </div>
+            </div>
+        </div>
+        
+        <div class="info">
+            <strong>🔄 Como funciona:</strong><br>
+            • O jogo atualiza 50 vezes por segundo (a cada 20ms)<br>
+            • A cada frame, o canvas é limpo e as peças são redesenhadas<br>
+            • Cada peça é um objeto com propriedades: largura, altura, cor e posição
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
