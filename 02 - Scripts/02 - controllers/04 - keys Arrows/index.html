@@ -1,11 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" type="text/css" href="css/styles.css"> <!-- Vincula o arquivo CSS externo -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usando teclas direcionais</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
-<body onload="startGame()"> <!-- Quando a página carregar, iniciará o jogo -->
-    <script src="js/script.js"></script> <!-- Vincula o arquivo JS externo -->
-    <p>Certifique-se de que esta janela tenha foco, então você pode usar as teclas de seta no teclado para mover o quadrado vermelho.</p>
+<body>
+    <h1 class="titulo">🎮 Usando teclas direcionais ↑, ↓, ←, →</h1>    
+    <div class="instrucoes">
+        <h3>📋 Como Jogar:</h3>
+        <p>Use as <strong>setas do teclado</strong> para mover o quadrado vermelho!</p>
+        <div class="teclas">
+            <div class="tecla">↑</div>
+            <div class="tecla">↓</div>
+            <div class="tecla">←</div>
+            <div class="tecla">→</div>
+        </div>
+        <p><em>Certifique-se de que esta janela está ativa (clique nela) antes de usar as teclas!</em></p>
+    </div>
+    
+    <!-- Canvas onde o jogo será desenhado -->
+    <canvas id="gameCanvas"></canvas>
+    
+    <div class="info-jogo">
+        <h3>🔧 Como funciona:</h3>
+        <p><strong>Canvas:</strong> É onde desenhamos o jogo (como uma tela de pintura)</p>
+        <p><strong>Quadrado:</strong> É nosso "personagem" que pode se mover</p>
+        <p><strong>Loop do jogo:</strong> O jogo se atualiza 50 vezes por segundo!</p>
+    </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
