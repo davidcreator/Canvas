@@ -1,7 +1,0 @@
-/* Define o estilo do canvas */
-canvas {
-    border: 1px solid black;
-    display: block;
-    margin: 0 auto;
-    background-color: #f0f0f0;
-}

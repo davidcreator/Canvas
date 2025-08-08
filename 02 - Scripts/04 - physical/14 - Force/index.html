@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulação Física Canvas</title>
+    <title>Simulação Física - Bola com Atrito e Colisão</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- ========================================
+         INTERFACE DO USUÁRIO
+    ======================================== -->
+    
+    <h1>🎯 Simulação Física: Bola com Atrito</h1>
+    
+    <div class="description">
+        <p><strong>Conceitos Demonstrados:</strong> Esta simulação mostra como o atrito afeta o movimento de uma bola, 
+        fazendo com que ela desacelere gradualmente até parar. Observe também a colisão elástica com a parede direita.</p>
+    </div>
+
     <canvas id="canvas"></canvas>
+    
+    <div class="controls">
+        <button onclick="resetBall()">🔄 Reiniciar</button>
+        <button onclick="increaseFriction()">⬆️ Mais Atrito</button>
+        <button onclick="decreaseFriction()">⬇️ Menos Atrito</button>
+    </div>
+
+    <div class="info-panel">
+        <div id="info">
+            <strong>Velocidade:</strong> <span id="velocity">0</span> px/frame<br>
+            <strong>Atrito:</strong> <span id="friction-display">0.98</span><br>
+            <strong>Status:</strong> <span id="status">Em movimento</span>
+        </div>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
