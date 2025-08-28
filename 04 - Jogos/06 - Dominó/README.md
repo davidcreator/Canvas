@@ -1,4 +1,4 @@
-# 🎯 Dominó Canvas - Seu Primeiro Jogo Completo!
+# 🁅 Dominó Didático
 
 ## 🚀 O Que Você Vai Construir
 Prepare-se para criar uma versão digital incrível do clássico jogo de Dominó usando **JavaScript** e **Canvas**! Este projeto vai te ensinar os fundamentos do desenvolvimento de jogos web de forma prática e divertida.
