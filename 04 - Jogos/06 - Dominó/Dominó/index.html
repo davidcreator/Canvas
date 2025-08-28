@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Dominó Didático</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Tela de Menu Principal -->
+    <div id="menu-principal" class="tela-menu">
+        <div class="container-menu">
+            <h1 class="titulo-principal">🁅 DOMINÓ DIDÁTICO</h1>
+            <p class="subtitulo">Aprenda jogando com diferentes modalidades</p>
+            
+            <div class="opcoes-menu">
+                <button class="botao-menu" onclick="iniciarJogo('classico')">
+                    🎯 Jogo Clássico
+                    <span class="descricao">Dominó tradicional para 2-4 jogadores</span>
+                </button>
+                
+                <button class="botao-menu" onclick="iniciarJogo('bloqueio')">
+                    🚫 Jogo de Bloqueio
+                    <span class="descricao">Vence quem tiver menos pontos ao travar</span>
+                </button>
+                
+                <button class="botao-menu" onclick="iniciarJogo('pontuacao')">
+                    🏆 Jogo por Pontuação
+                    <span class="descricao">Primeiro a atingir 100 pontos</span>
+                </button>
+                
+                <button class="botao-menu" onclick="mostrarRegras()">
+                    📚 Como Jogar
+                    <span class="descricao">Aprenda as regras do dominó</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Configurações do Jogo -->
+    <div id="configuracoes" class="tela-menu hidden">
+        <div class="container-menu">
+            <h2>⚙️ Configurações do Jogo</h2>
+            
+            <div class="config-opcao">
+                <label>Número de Jogadores:</label>
+                <select id="num-jogadores">
+                    <option value="2">2 Jogadores</option>
+                    <option value="3">3 Jogadores</option>
+                    <option value="4">4 Jogadores</option>
+                </select>
+            </div>
+            
+            <div class="config-opcao">
+                <label>Dificuldade da IA:</label>
+                <select id="dificuldade-ia">
+                    <option value="facil">Fácil</option>
+                    <option value="medio">Médio</option>
+                    <option value="dificil">Difícil</option>
+                </select>
+            </div>
+            
+            <div class="botoes-config">
+                <button class="botao-secundario" onclick="voltarMenu()">Voltar</button>
+                <button class="botao-principal" onclick="confirmarJogo()">Começar Jogo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tela de Regras -->
+    <div id="regras" class="tela-menu hidden">
+        <div class="container-menu">
+            <h2>📚 Como Jogar Dominó</h2>
+            <div class="texto-regras">
+                <h3>🎯 Objetivo:</h3>
+                <p>Ser o primeiro a jogar todas as suas peças ou ter menos pontos quando o jogo travar.</p>
+                
+                <h3>🁅 Peças:</h3>
+                <p>O jogo usa 28 peças duplas, de 0-0 até 6-6.</p>
+                
+                <h3>🎮 Como Jogar:</h3>
+                <ul>
+                    <li>Cada jogador recebe 7 peças (6 se forem 4 jogadores)</li>
+                    <li>Quem tem a peça dupla maior (6-6) começa</li>
+                    <li>Jogue peças combinando os números das extremidades</li>
+                    <li>Se não puder jogar, compre do monte</li>
+                    <li>Se o monte acabar e não puder jogar, passe a vez</li>
+                </ul>
+                
+                <h3>🏆 Vitória:</h3>
+                <p><strong>Clássico:</strong> Primeiro a acabar as peças<br>
+                <strong>Bloqueio:</strong> Menor pontuação quando travar<br>
+                <strong>Pontuação:</strong> Primeiro a atingir 100 pontos</p>
+            </div>
+            
+            <button class="botao-principal" onclick="voltarMenu()">Voltar ao Menu</button>
+        </div>
+    </div>
+
+    <!-- Tela do Jogo -->
+    <div id="tela-jogo" class="hidden">
+        <!-- Interface do jogo -->
+        <div id="interface-jogo">
+            <div class="barra-superior">
+                <div class="info-jogador">
+                    <span id="jogador-atual">Jogador 1</span>
+                    <span id="modo-jogo">Clássico</span>
+                </div>
+                
+                <div class="pontuacao">
+                    <span id="pontos-jogador">Pontos: 0</span>
+                    <span id="pecas-restantes">Peças: 7</span>
+                </div>
+                
+                <div class="controles">
+                    <button id="btn-comprar" class="botao-pequeno">Comprar</button>
+                    <button id="btn-passar" class="botao-pequeno">Passar</button>
+                    <button id="btn-menu" class="botao-pequeno" onclick="voltarMenu()">Menu</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Canvas do jogo -->
+        <canvas id="canvas-jogo" width="1200" height="600"></canvas>
+        
+        <!-- Área das peças do jogador -->
+        <div id="area-pecas-jogador">
+            <h3>Suas Peças:</h3>
+            <div id="pecas-jogador"></div>
+        </div>
+    </div>
+
+    <!-- Modal de Fim de Jogo -->
+    <div id="modal-fim-jogo" class="modal hidden">
+        <div class="modal-conteudo">
+            <h2 id="titulo-resultado">🎉 Parabéns!</h2>
+            <p id="texto-resultado">Você venceu o jogo!</p>
+            <div id="pontuacao-final"></div>
+            
+            <div class="botoes-modal">
+                <button class="botao-secundario" onclick="voltarMenu()">Menu Principal</button>
+                <button class="botao-principal" onclick="novoJogo()">Jogar Novamente</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carregamento dos scripts -->
+    <script src="js/pecas.js"></script>
+    <script src="js/tabuleiro.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+/* ===== RESET E CONFIGURAÇÕES GERAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* ===== CLASSES UTILITÁRIAS ===== */
+.hidden {
+    display: none !important;
+}
+
+/* ===== ESTILOS DO MENU PRINCIPAL ===== */
+.tela-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container-menu {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.titulo-principal {
+    font-size: 3em;
+    color: #4a5568;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitulo {
+    color: #718096;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* ===== OPÇÕES DO MENU ===== */
+.opcoes-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.botao-menu {
+    background: linear-gradient(135deg, #2f6ba0 0%, #0498a0 100%);
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+}
+
+.botao-menu:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(79, 172, 254, 0.4);
+}
+
+.botao-menu .descricao {
+    display: block;
+    font-size: 0.9em;
+    font-weight: normal;
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+/* ===== BOTÕES GERAIS ===== */
+.botao-principal {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botao-principal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.botao-secundario {
+    background: #e2e8f0;
+    border: 2px solid #cbd5e0;
+    border-radius: 10px;
+    padding: 15px 30px;
+    color: #4a5568;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botao-secundario:hover {
+    background: #cbd5e0;
+    transform: translateY(-1px);
+}
+
+.botao-pequeno {
+    background: #48bb78;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    color: white;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botao-pequeno:hover {
+    background: #38a169;
+    transform: scale(1.05);
+}
+
+/* ===== CONFIGURAÇÕES ===== */
+.config-opcao {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.config-opcao label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #4a5568;
+}
+
+.config-opcao select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1em;
+    background: white;
+}
+
+.botoes-config {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* ===== REGRAS ===== */
+.texto-regras {
+    text-align: left;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f7fafc;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.texto-regras h3 {
+    color: #4a5568;
+    margin: 15px 0 10px 0;
+    font-size: 1.2em;
+}
+
+.texto-regras p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #718096;
+}
+
+.texto-regras ul {
+    margin: 10px 0 15px 20px;
+    color: #718096;
+}
+
+.texto-regras li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* ===== INTERFACE DO JOGO ===== */
+#tela-jogo {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+#interface-jogo {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.info-jogador {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info-jogador span {
+    font-weight: bold;
+    color: #4a5568;
+}
+
+.pontuacao {
+    display: flex;
+    gap: 20px;
+    color: #4a5568;
+    font-weight: bold;
+}
+
+.controles {
+    display: flex;
+    gap: 10px;
+}
+
+/* ===== CANVAS DO JOGO ===== */
+#canvas-jogo {
+    display: block;
+    margin: 0 auto;
+    background: #2d5a27;
+    border: 3px solid #1a365d;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* ===== ÁREA DAS PEÇAS DO JOGADOR ===== */
+#area-pecas-jogador {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    margin-top: 10px;
+}
+
+#area-pecas-jogador h3 {
+    color: #4a5568;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#pecas-jogador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    min-height: 80px;
+    padding: 10px;
+    background: #f7fafc;
+    border-radius: 10px;
+}
+
+/* ===== ESTILO DAS PEÇAS ===== */
+.peca-jogador {
+    width: 60px;
+    height: 30px;
+    background: white;
+    border: 2px solid #4a5568;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8em;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.peca-jogador:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: #e6fffa;
+    border-color: #38b2ac;
+}
+
+.peca-jogador.selecionada {
+    background: #bee3f8;
+    border-color: #3182ce;
+    transform: translateY(-5px);
+}
+
+/* ===== MODAL ===== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-conteudo {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-conteudo h2 {
+    color: #4a5568;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.modal-conteudo p {
+    color: #718096;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+#pontuacao-final {
+    background: #f7fafc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    color: #4a5568;
+    font-weight: bold;
+}
+
+.botoes-modal {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .titulo-principal {
+        font-size: 2em;
+    }
+    
+    .container-menu {
+        padding: 20px;
+    }
+    
+    .barra-superior {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #canvas-jogo {
+        width: 95%;
+        height: auto;
+    }
+    
+    .botoes-config,
+    .botoes-modal {
+        flex-direction: column;
+    }
+    
+    #pecas-jogador {
+        justify-content: center;
+    }
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tela-menu {
+    animation: aparecer 0.5s ease-out;
+}
+
+/* ===== EFEITOS ESPECIAIS ===== */
+.peca-jogador.jogada {
+    animation: jogar-peca 0.5s ease-out;
+}
+
+@keyframes jogar-peca {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px) rotateZ(10deg);
+    }
+    100% {
+        transform: translateY(0) rotateZ(0deg);
+    }
+}
